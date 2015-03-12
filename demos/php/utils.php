@@ -66,11 +66,11 @@ class Event {
 
 		if (!$eventEnd) {
 			// No end time? Only check if the start is within range.
-			return $eventStart < $rangeEnd && $eventStart >= $rangeStart;
+			return $eventStart <= $rangeEnd && $eventStart >= $rangeStart;
 		}
 		else {
 			// Check if the two ranges intersect.
-			return $eventStart < $rangeEnd && $eventEnd > $rangeStart;
+			return $eventStart <= $rangeEnd && $eventEnd >= $rangeStart;
 		}
 	}
 
